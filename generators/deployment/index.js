@@ -9,24 +9,28 @@ class LoopbackGenerator extends Generator {
         name    : 'appName',
         message : 'Your application name',
         default : config.name,
+        store   : true
       },
       {
         type    : 'input',
         name    : 'repositoryUrl',
         message : 'Your git repository URL',
         default : '',
+        store   : true
       },
       {
         type    : 'input',
         name    : 'stagingUrl',
         message : 'Your staging url',
         default : '',
+        store   : true
       },
       {
         type    : 'input',
         name    : 'prodUrl',
         message : 'Your production url',
         default : '',
+        store   : true
       },
     ]).then((answers) => {
       this.answers = answers;

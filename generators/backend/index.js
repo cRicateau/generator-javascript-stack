@@ -4,31 +4,42 @@ module.exports = class extends Generator {
   initializing() {
     this.log('Using a yeoman generator for loopback inside this generator');
     this.spawnCommandSync('lb');
-    this.log('I need some database informations')
+    this.log('I need some information')
     return this.prompt([
+      {
+        type    : 'input',
+        name    : 'appName',
+        message : 'App name:',
+        default : 'myApp',
+        store   : true
+      },
       {
         type    : 'input',
         name    : 'databaseName',
         message : 'Database name:',
         default : 'database',
+        store   : true
       },
       {
         type    : 'input',
         name    : 'databaseUser',
         message : 'Database user:',
         default : 'postgres',
+        store   : true
       },
       {
         type    : 'input',
         name    : 'databasePassword',
         message : 'Dev database password:',
         default : 'password',
+        store   : true
       },
       {
         type    : 'input',
         name    : 'prodDatabasePassword',
         message : 'Your production database password',
         default : 'password',
+        store   : true
       }
     ]).then((answers) => {
       this.answers = answers;

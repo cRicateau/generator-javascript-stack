@@ -6,7 +6,7 @@ module.exports = function (shipit) {
       workspace: '/tmp/<%= appName %>',
       deployTo: '~/<%= appName %>',
       repositoryUrl: '<%= repositoryUrl %>',
-      ignores: ['.git', 'node_modules', 'client/node_modules', 'tests', '.gitignore', 'devops'],
+      ignores: ['.git', 'tests', '.gitignore', 'devops'],
       rsync: ['--del'],
       keepReleases: 2,
       key: '~/.ssh/id_rsa',
@@ -25,9 +25,9 @@ module.exports = function (shipit) {
   shipit.task('deploy:finish', () => {
     switch(shipit.config.branch) {
       case 'master':
-        return shipit.remote('cd ~/<%= appName %>/current && NODE_ENV=production npm start');
+        return shipit.remote('cd ~/<%= appName %>/current & pm2 kill && NODE_ENV=production ./node_modules/.bin/pm2 startOrRestart pm2.yml');
       default:
-        return shipit.remote('cd ~/<%= appName %>/current && npm start');
+        return shipit.remote('cd ~/<%= appName %>/current & pm2 kill && ./node_modules/.bin/pm2 startOrRestart pm2.yml');
     }
   });
 };

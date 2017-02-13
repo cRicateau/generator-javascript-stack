@@ -4,7 +4,7 @@ module.exports = class extends Generator {
   initializing() {
     this.log('Using a yeoman generator for loopback inside this generator');
     this.spawnCommandSync('lb');
-    this.log('I need some information')
+    this.log('Please provide some more information')
     return this.prompt([
       {
         type    : 'input',
@@ -102,6 +102,6 @@ module.exports = class extends Generator {
   addTestStack() {
     this.spawnCommandSync('mkdir tests');
     this.log('Install mocha and istanbul for code coverage');
-    return this.npmInstall(['mocha', 'istanbul'], { 'save-dev': true })
+    return this.npmInstall(['mocha', 'istanbul', 'chai', 'sinon', 'sinon-chai'], { 'save-dev': true })
   }
 };

@@ -6,32 +6,30 @@
 cd client && webpack-dev-server --config config/webpack.config.js --content-base ../src/ --hot --no-info --colors --open --port 3000
 ```
 
-### Install backend
+### Installation
 
 - Launch VM: `vagrant up`
 
-- Start server:
+- Connect to the vagrant: `vagrant ssh`
+
+- Create the database and the role:
 ```
-vagrant ssh
+createuser -U postgres <%= databaseUser %>
+createdb -U postgres <%= databaseName %>
+```
+
+- Start server with pm2:
+```
 sudo su - www-data
-cd <your-app>/current/client && npm rebuild node-sass
+cd <%= appName %>/current/client && npm rebuild node-sass
 NODE_ENV=production npm run compile
-npm start
+cd ../ && ./node_modules/.bin/pm2 startOrRestart pm2.yml
 ```
 
 ## Tests
-- Backend tests: `NODE_ENV=test ./node_modules/.bin/istanbul cover ./node_modules/.bin/mocha -- tests/backend/**/*.js -R spec`
+- Backend tests: `NODE_ENV=test ./node_modules/.bin/istanbul cover ./node_modules/.bin/mocha -- tests/**/*.js -R spec`
 
 - Frontend tests: `cd client && npm test`
-
-
-## Database
-
-Create the database:
-
-```
-createdb -U <databaseUser> -d <databaseName>
-```
 
 ### Migrations:
 

@@ -7,6 +7,16 @@ You need some tools to
 + Loopback-cli `npm install -g loopback-cli`
 
 ## Installation:
+
+Add the local generator:
+
+```
+git clone https://github.com/cRicateau/generator-javascript-stack
+cd generator-javascript-stack
+npm link
+```
+
+In a new empty directory created for your app:
 ```
 yo loopback-react-redux:backend
 yo loopback-react-redux:client
@@ -25,7 +35,7 @@ Then, you can run your server
 ```
 vagrant ssh
 sudo su - www-data
-cd myAwesomeProject/current
+cd <app-name>/current
 npm start
 ```
 

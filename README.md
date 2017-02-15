@@ -5,6 +5,7 @@ You need some tools to
 + Ansible
 + nodejs
 + Loopback-cli `npm install -g loopback-cli`
++ Yeoman `npm install -g yeoman`
 
 ## Installation:
 
@@ -18,10 +19,10 @@ npm link
 
 In a new empty directory created for your app:
 ```
-yo loopback-react-redux:backend
-yo loopback-react-redux:client
-yo loopback-react-redux:provisioning
-yo loopback-react-redux:deployment
+yo ansible-loopback-react-redux:backend
+yo ansible-loopback-react-redux:client
+yo ansible-loopback-react-redux:provisioning
+yo ansible-loopback-react-redux:deployment
 ```
 
 ## Installation

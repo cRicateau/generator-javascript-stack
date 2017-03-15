@@ -4,10 +4,14 @@ module.exports = class extends Generator {
   initializing() {
     this.log('Deleting existing client directory');
     this.spawnCommandSync('rm', ['-rf', 'client']);
-
     this.log('Cloning react-redux-starter-kit');
-    this.spawnCommandSync('git', ['clone', 'https://github.com/davezuko/react-redux-starter-kit.git', 'client']);
-
+    this.spawnCommandSync('git', [
+      'clone',
+      '--branch',
+      'v3.0.0-alpha.2',
+      'https://github.com/davezuko/react-redux-starter-kit.git',
+      'client'
+    ]);
     this.log('Updating project config to use webpack-dev-server');
     this.spawnCommandSync('rm', ['client/config/project.config.js']);
     this.fs.copyTpl(

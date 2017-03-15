@@ -24,5 +24,4 @@ Vagrant.configure("2") do |config|
     ansible.playbook = "devops/provisioning/playbook.yml"
     ansible.limit = 'all'
   end
-
 end

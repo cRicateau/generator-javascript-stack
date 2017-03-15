@@ -3,7 +3,7 @@
 ### Local dev server
 
 ```
-cd client && webpack-dev-server --config config/webpack.config.js --content-base ../src/ --hot --no-info --colors --open --port 3000
+cd client && webpack-dev-server --config config/webpack.config.js --no-info --colors --open
 ```
 
 ### Installation

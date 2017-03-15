@@ -26,6 +26,11 @@ NODE_ENV=production npm run compile
 cd ../ && ./node_modules/.bin/pm2 startOrRestart pm2.yml
 ```
 
+Now, you are set up !
+
+You can browse a static page served by Loopback at the following url : `http://10.0.0.10`
+You can also browse Loopback's explorer at : `http://10.0.0.10/explorer`
+
 ## Tests
 - Backend tests: `NODE_ENV=test ./node_modules/.bin/istanbul cover ./node_modules/.bin/mocha -- tests/**/*.js -R spec`
 

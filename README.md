@@ -39,22 +39,8 @@ yo ansible-loopback-react-redux:deployment
 ## Installation
 
 ## Usage
-```
-vagrant up
-```
 
-Then, you can run your server
-```
-vagrant ssh
-sudo su - www-data
-cd <app-name>/current
-npm start
-```
-
-Now, you are set up !
-
-You can browse a static page served by Loopback at the following url : `http://10.0.0.10`
-You can also browse Loopback's explorer at : `http://10.0.0.10/explorer`
+Follow the readme of the project you generated!
 
 ## The provisioning
 

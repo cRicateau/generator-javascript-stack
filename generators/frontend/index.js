@@ -19,7 +19,10 @@ module.exports = class extends Generator {
       this.destinationPath(''),
       this.answers
     );
+    this.log('Remove git history');
     this.spawnCommandSync('rm', ['-rf', 'client/.git']);
+    this.log('Remove local client server');
+    this.spawnCommandSync('rm', ['-rf', 'client/server']);
   }
 
   install() {

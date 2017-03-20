@@ -53,6 +53,12 @@ class LoopbackGenerator extends Generator {
       this.destinationPath(''),
       this.answers
     );
+
+    this.fs.copyTpl(
+      this.templatePath('**/*.md'),
+      this.destinationPath(''),
+      this.answers
+    );
   }
 
 };

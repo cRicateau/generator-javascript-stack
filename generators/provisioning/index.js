@@ -79,6 +79,12 @@ class LoopbackGenerator extends Generator {
       this.templatePath('**/roles/**'),
       this.destinationRoot()
     );
+
+    this.fs.copyTpl(
+      this.templatePath('**/*.md'),
+      this.destinationPath(''),
+      this.answers
+    );
   }
 
 };
